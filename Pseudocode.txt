@@ -1,0 +1,142 @@
+For every option, 1-9 create a seperate method
+
+create a structure that represents a passenger/seat
+this structure will have fields that represent 
+- whether it is an isle or not
+- occupied or not
+- name of passenger
+
+
+in order to save data have a txt file that has a passengers name and seat
+- to get data read from this file
+-to save data write to this file 
+develop a parser that will read this file 
+
+create a structure for a plane 
+- a plane has 8 rows and 10 seats per row
+- represent this is a 2D array
+
+
+initialize plane
+  for each row
+    for each seat
+        if the index is 3 or 8 then make the seat an isle 
+        else mark occupied as false
+
+For the menu, create a switch statement based the options
+make a case for each option
+when menu is called upon make sure the program askes the user to input a number 1-9 to indicate which option they would like, then take that input and use it in the switch statement then in the body of each case is the correseponding function call for that specific option
+
+Option 1: Load Previous 
+-use a parser that reads from the file 
+
+for each line in the file:
+  parse to get name and seat and row
+  call an updateSeat function with the name,seat, and row that was parsed
+  this will udpate the current plane with the previous information 
+  
+
+Option 2:Save Current
+-write to the text file of passengers 
+loop through each array for each passenger in the array write the name and the seat to the text file 
+
+use two for loops
+for each row:
+  for each seat:
+      write  name seat row to the txt file.
+
+
+
+
+
+Option 3:Display Seating Chart
+loop through the 2D array, if the passenger is occupied then put x if the passenger is not ocupied put 0 then if the passenger is an isle (true) then put a space. after each row enter to the next line
+
+for each row: 
+  for each seat:
+      if passenger is isle -> print space
+      if passenger is occupied -> print X
+      if passenger is not occipied -> print 0
+      if it is the last seat in the row then enter 
+
+
+
+
+
+Option 4:Choose Seat
+random seat generator
+- to create the random seat generator, loop thorough the specified rows, checking if the passanger's occupied field is false if it is false then put that seat in a vector of seats that are empty
+- then use a random function with the range of the length of the empty seat vector to get the indexing element 
+- then get the element of the randomly generated index and that is the seat
+
+for each seat:
+  if passenger not occupied add to a vector of all empty seats
+
+get a random seat by indexing the empty seat vector with random number generator that is bounded by the range of the empty seats vector 
+
+
+1st check to see if the entire plane is full, this can be done by looping through the arrays and adding all empty seats to a vector if the passenger's occupied field is false, then checking to see if the vector size is 0, if it is zero then the entire flight is full and tell the user the next flight is in 3 hours
+
+
+
+- ask the user for class, 'F' 'B' 'E'
+based on this, for the corresponding row/s add all the empty seats into a vector
+
+if the size of empty seats vector for the intended class is 0 then ask the user if they would like to downgrade
+
+if yes -> search for seats in the class lower and display seat and update -> if there are none then display that the next flight is in 3 hours
+
+if no-> 
+display that the next flight is in 3 hours
+
+
+at the end promt the user if they would like to upgrade if they are in class B or E
+
+if (yes):
+  ask what class
+  based on this do the random seat generator 
+if (no):
+  exit
+
+Option 5:Update Seat Assignment
+
+takes in a row, seat and name
+
+index the plane array by row and seat then set name of passenger to the input name
+
+
+Option 6:Cancel Seat Assignment 
+ask user for name and seat
+
+if the name matches the seat provided, it calls on a helper function that removes the passenger
+and then calls on save file to save the change made
+
+if there is no match, it outputs an error message to console and shows the main menu
+
+
+Option 7:Print Boarding Pass
+ask user for row num and seat
+
+index the plane array with row and seat 
+
+if (there that seat is occipied ):
+  print the name seat and classs to console 
+  else :
+    prompt user for new seat and row and check aagain 
+      if (there that seat is occipied ):
+        print the name seat and classs to console 
+          else:
+            prompt user for the last time for a new row and seat
+                if (there that seat is occipied ):
+                    print the name seat and classs to console 
+                      else (seat is not occupied ):
+                          output a message stating 
+
+
+Option 8:Print Passenger Manifest
+gives another small menu that asks the user to input one of 1,2,3,4 and based on the option
+it outputs that selection, if the input doesn't match any of the options, it defaults to 1
+which prints in ascending order of seat
+
+
+Option 9:Quit
