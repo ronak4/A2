@@ -814,7 +814,7 @@ public:
         updateSeat(rowNum, seatChar, name);
         cout << "seat updated to " << seat << endl;
       }
-        saveCurrent();
+        
         upgrade(seat, name);
     }
   }
